@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Admin panel</title>
+</head>
+
+<body>
+  <main class="main-layout">
+    <nav class="nav-bar">
+      <img src="./images/logo.png" alt="">
+      <ul>
+        <div class="menu"><i class="fa-solid fa-dashboard"></i>
+          <li><a href="dashboard" data-link>داشبورد</a></li>
+        </div>
+        <div class="menu"><i class="fa-solid fa-bag-shopping"></i>
+          <li><a href="orders" data-link>سفارشات</a></li>
+        </div>
+        <div class="menu"><i class="fa-solid fa-box"></i>
+          <li><a href="products" data-link>محصولات</a></li>
+        </div>
+        <div class="menu"><i class="fa-solid fa-users"></i>
+          <li><a href="customers" data-link>مشتریان</a></li>
+        </div>
+        <div class="menu"><i class="fa-solid fa-message"></i>
+          <li><a href="support" data-link>پشتیبانی</a></li>
+        </div>
+        <div class="menu"><i class="fa-solid fa-cog"></i>
+          <li><a href="setting" data-link>تنظیمات</a></li>
+        </div>
+      </ul>
+    </nav>
+    <section id="app">
+      <div class="main-top">
+        <form action="" class="form-search">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" name="" id="search" placeholder="جستجو">
+        </form>
+        <div class="top-left">
+          <i class="fa-regular fa-message"></i>
+          <i class="fa-regular fa-bell"></i>
+          <span><i class="fa-regular fa-user"></i></span>
+          <a href="">نام کاربری</a>
+        </div>
+      </div>
+      <div class="main-content">
+        <!-- <section class="dashboard">
+          <p class="title">داشبورد</p>
+          <div class="part-1">
+            <div class="right-chart">
+              <div class="right-chart_top">
+                <div class="rct-top">
+                  <h3>کل فروش</h3>
+                  <p>مشاهده گزارش</p>
+                </div>
+                <div class="rct-bot">
+                  <h3>74,958,000 تومان</h3>
+                  <p>7,395,000 تومان در ماه گذشته</p>
+                </div>
+              </div>
+              <div class="right-chart_bottom">
+                <div class="rcb-right">
+                  <p>این هفته تاکنون</p>
+                  <h3>1,339,000</h3>
+                </div>
+                <div class="rcb-left">
+                  <p class="increase">4.63%</p><i class="fa-solid fa-arrow-up"></i>
+                  <p>در مقایسه با هفته گذشته</p>
+                </div>
+              </div>
+              <div class="right-chart_img">
+                <img src="./images/chart1.png" alt="">
+              </div>
+            </div>
+            <div class="left-chart">
+              <h3>میانگین سفارش</h3>
+              <div class="left-chart_mid">
+                <span> تومان 463,000</span>
+                <div>
+                  <p class="increase">4.63%</p><i class="fa-solid fa-arrow-up"></i>
+                  <p>در مقایسه با هفته گذشته</p>
+                </div>
+              </div>
+              <div class="left-chart_img">
+                <h3>سفارشات در طول زمان</h3>
+                <img src="./images/chart2.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="part-2">
+            <p class="sub-title">سفارشات اخیر</p>
+            <div class="orders1">
+              <div class="grid-item">شماره سفارش</div>
+              <div class="grid-item"> مشتری</div>
+              <div class="grid-item">تاریخ</div>
+              <div class="grid-item">مبلغ</div>
+              <div class="grid-item">وضعیت</div>
+              <div class="grid-item">#95954</div>
+              <div class="grid-item">فرشید قنبری</div>
+              <div class="grid-item">1402/02/21</div>
+              <div class="grid-item">4,597,000</div>
+              <div class="grid-item">پرداخت شده</div>
+              <div class="grid-item">#95850</div>
+              <div class="grid-item"> فریبا آتش افروز</div>
+              <div class="grid-item">1402/02/02</div>
+              <div class="grid-item">597,000</div>
+              <div class="grid-item">لغو شده</div>
+              <div class="grid-item">#95812</div>
+              <div class="grid-item">دانیال سعیدی</div>
+              <div class="grid-item">1402/01/02</div>
+              <div class="grid-item">200,000</div>
+              <div class="grid-item">پرداخت شده</div>
+              <div class="grid-item">#95256</div>
+              <div class="grid-item">مهدیه جباری</div>
+              <div class="grid-item">1402/01/29</div>
+              <div class="grid-item">1,100,000</div>
+              <div class="grid-item">پرداخت شده</div>
+              <div class="grid-item">#95135</div>
+              <div class="grid-item">یاسمن چگینی</div>
+              <div class="grid-item">1402/01/29</div>
+              <div class="grid-item">1,100,000</div>
+              <div class="grid-item">موعد مقرر</div>
+            </div>
+          </div>
+          <div class="part-3">
+            <div class="top-pro">
+              <div class="top-pro-1">
+                <p>محصولات برتر</p>
+                <div><span>هفتگی</span><i class="fa-solid fa-angle-down"></i></div>
+              </div>
+              <div class="top-pro-2">
+                <div class="pro">
+                  <div class="pro-title">
+                    <img src="./images/a.png" alt="">
+                    <div>
+                      <p>ردیاب تناسب اندام صورتی</p>
+                      <span>990,000 تومان</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p>990,000</p>
+                    <span>10عدد فروخته شده </span>
+                  </div>
+                </div>
+                <div class="pro">
+                  <div class="pro-title">
+                    <img src="./images/b.png" alt="">
+                    <div>
+                      <p>ساعت هوشمند بنفش</p>
+                      <span>990,000 تومان</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p>990,000</p>
+                    <span>10عدد فروخته شده </span>
+                  </div>
+                </div>
+                <div class="pro">
+                  <div class="pro-title">
+                    <img src="./images/c.png" alt="">
+                    <div>
+                      <p>ساعت هوشمند Mi Band مشکی</p>
+                      <span>990,000 تومان</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p>990,000</p>
+                    <span>10عدد فروخته شده </span>
+                  </div>
+                </div>
+                <div class="pro">
+                  <div class="pro-title">
+                    <img src="./images/d.png" alt="">
+                    <div>
+                      <p>هدفون مشکی</p>
+                      <span>990,000 تومان</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p>990,000</p>
+                    <span>10عدد فروخته شده </span>
+                  </div>
+                </div>
+                <div class="pro">
+                  <div class="pro-title">
+                    <img src="./images/e.png" alt="">
+                    <div>
+                      <p>هدفون آیفون 7</p>
+                      <span>990,000 تومان</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p>990,000</p>
+                    <span>10عدد فروخته شده </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="traffic">
+              <div class="traffic-title">
+                <p>منابع ترافیک</p>
+                <div><span>30 روز</span><i class="fa-solid fa-angle-down"></i></div>
+              </div>
+              <div class="traffic-body">
+                <img src="./images/trafic.png" alt="">
+                <ul class="traffic-list">
+                  <li class="lists">
+                    <div class="list">
+                      <div class="list-dot"></div>
+                      <span class="list-title">جستجوی ارگانیک</span>
+                    </div>
+                  </li>
+                  <li class="lists">
+                    <div class="list">
+                      <div class="list-dot"></div>
+                      <span class="list-title">ارجاعات</span>
+                    </div>
+                  </li>
+                  <li class="lists">
+                    <div class="list">
+                      <div class="list-dot"></div>
+                      <span class="list-title">شبکه های اجتماعی</span>
+                    </div>
+                  </li>
+                  <li class="lists">
+                    <div class="list">
+                      <div class="list-dot"></div>
+                      <span class="list-title">سایر</span>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="trafic-numbers">
+                  <span>4,305</span>
+                  <span>482</span>
+                  <span>859</span>
+                  <span>138</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="orders">
+          <p class="title">سفارشات</p>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>سفارش</span></div>
+            <div class="sub-order"><span>تاریخ</span></div>
+            <div class="sub-order"><span>وضعیت</span></div>
+            <div class="sub-order"><span class="p-r">مشتری</span></div>
+            <div class="sub-order"><span>خریداری شده</span></div>
+            <div class="sub-order"><span class="p-l">مجموع</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95954</span></div>
+            <div class="sub-order"><span>21 آبان 1402</span></div>
+            <div class="sub-order"><span>در انتظار</span></div>
+            <div class="sub-order"><span class="p-r">فردین علوی</span></div>
+            <div class="sub-order"><span>3 محصول</span></div>
+            <div class="sub-order"><span class="p-l">250,000 تومان</span></div>
+          </div>
+          <div class="order">
+            <div class="sub-order"><input type="checkbox"><span>#95961</span></div>
+            <div class="sub-order"><span>20 آبان 1402</span></div>
+            <div class="sub-order"><span>تحویل داده شده</span></div>
+            <div class="sub-order"><span class="p-r">جواد فراهانی</span></div>
+            <div class="sub-order"><span>ردیاب تناسب اندام</span></div>
+            <div class="sub-order"><span class="p-l">99,000 تومان</span></div>
+          </div>
+        </section> -->
+        <!-- <section class="products">
+          <p class="title">محصولات</p>
+          <div class="product">
+            <div class="w-25"><input type="checkbox"><span>نام</span></div>
+            <div class="w-15"><span>شناسه محصول</span></div>
+            <div class="w-15"><span>قیمت</span></div>
+            <div class="w-15"><span>موجودی</span></div>
+            <div class="w-15"><span>دسته بندی</span></div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/a.png" alt="">
+                <p>ردیاب تناسب اندام</p>
+              </div>
+            </div>
+            <div class="w-15">UY3749</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">49</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/b.png" alt="">
+                <p>ساعت هوشمند بنفش</p>
+              </div>
+            </div>
+            <div class="w-15">UY3750</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">103</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/c.png" alt="">
+                <p>ساعت هوشمند Mi Band</p>
+              </div>
+            </div>
+            <div class="w-15">UY3751</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">68</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/d.png" alt="">
+                <p>هدفون مشکی</p>
+              </div>
+            </div>
+            <div class="w-15">UY3752</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">77</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/e.png" alt="">
+                <p>هدفون آیفون 7</p>
+              </div>
+            </div>
+            <div class="w-15">UY3753</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">81</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/f.png" alt="">
+                <p> قاب آیفون گرادینت</p>
+              </div>
+            </div>
+            <div class="w-15">UY3749</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">49</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/g.png" alt="">
+                <p>اسپیکر سیمی</p>
+              </div>
+            </div>
+            <div class="w-15">UY3750</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">103</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/h.png" alt="">
+                <p>اسپیکر ضد آب</p>
+              </div>
+            </div>
+            <div class="w-15">UY3751</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">68</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/i.png" alt="">
+                <p>نگه دارنده نوشیدنی</p>
+              </div>
+            </div>
+            <div class="w-15">UY3752</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">77</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+          <div class="product">
+            <div class="product-name w-25">
+              <input type="checkbox">
+              <div class="product-title">
+                <img src="./images/j.png" alt="">
+                <p>ردیاب تناسب اندام</p>
+              </div>
+            </div>
+            <div class="w-15">UY3753</div>
+            <div class="w-15">99000 تومان</div>
+            <div class="w-15">81</div>
+            <div class="w-15">فیت بیت، ردیاب</div>
+            <div class="w-15"><i class="fa-solid fa-star p-r"></i></div>
+          </div>
+
+
+        </section> -->
+        <!-- <section class="customers">
+          <p class="title">مشتریان</p>
+          <div class="customer">
+            <div class="w-25"><input type="checkbox"><span>کاربر</span></div>
+            <div class="w-15"><span class="p-l">سفارش داده شده</span></div>
+            <div class="w-15"><span class="p-r">تلفن</span></div>
+            <div class="w-15"><span class="p-r">کشور</span></div>
+            <div class="w-15"><span>آخرین سفارش</span></div>
+            <div class="w-15"><span>وضعیت</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/a-sm.jpg" alt="">
+                <div>
+                  <p>فرزین اندیش</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/b-sm.jpg" alt="">
+                <div>
+                  <p>حسین رسول زاده </p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>42,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">استرالیا</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>تعلیق</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/c-sm.jpg" alt="">
+                <div>
+                  <p>مهشاد تقوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/d-sm.jpg" alt="">
+                <div>
+                  <p>شقایق مولوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/a-sm.jpg" alt="">
+                <div>
+                  <p>فرزین اندیش</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/b-sm.jpg" alt="">
+                <div>
+                  <p>حسین رسول زاده </p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>42,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">استرالیا</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>تعلیق</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/c-sm.jpg" alt="">
+                <div>
+                  <p>مهشاد تقوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/d-sm.jpg" alt="">
+                <div>
+                  <p>شقایق مولوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/c-sm.jpg" alt="">
+                <div>
+                  <p>مهشاد تقوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+          <div class="customer">
+            <div class="w-25 customer-title p-l">
+              <input type="checkbox">
+              <div class="customer-name">
+                <img src="./images/d-sm.jpg" alt="">
+                <div>
+                  <p>شقایق مولوی</p>
+                  <span>someone@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-15"><span>35,040,000 تومان</span></div>
+            <div class="w-15"><span class="p-r">09123456789</span></div>
+            <div class="w-15"><span class="p-r">ایران</span></div>
+            <div class="w-15"><span>21 آبان 1402</span></div>
+            <div class="w-15"><span>فعال</span></div>
+          </div>
+
+        </section> -->
+        <!-- <section class="support">
+          <div class="support-left">
+            <div class="sl-header">
+              <span>فعال</span>
+              <span>بسته</span>
+              <span>ستاره دار</span>
+              <span>همه</span>
+              <i class="fa-solid fa-search"></i>
+            </div>
+            <div class="sl-body">
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/b-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>فرشید قنبری</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/a-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>امید کمالیان</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/c-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>نینو کولیوند</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/d-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>رعنا شفیعی</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/b-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>فرشید قنبری</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/a-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>امید کمالیان</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/c-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>نینو کولیوند</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>در هنگام سفارش پول انتخاب نشد.</h3>
+                  <p>سلام تیم محترم من با مشکل مواجه هستمچون نمیتونم واحد پول رودر صفحه سفهرش خریدانتخاب کنم</p>
+                </div>
+                <div class="message-footer"><i class="fa-solid fa-star"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="support-right">
+            <div class="sr-header">
+              <h3>هنگام سفارش نمی توان واحد پول را انتخاب کرد</h3>
+              <div class="sr-header-bot">
+                <div>
+                  <i class="fa-solid fa-flag"></i>
+                  <span>مشکل فنی</span>
+                </div>
+                <div>
+                  <div class="sr-header-bl">
+                    <div class="bot-left">
+                      <i class="fa-solid fa-check"></i>
+                      علامت گذاری به عنوان بسته
+                    </div>
+                    <div class="dropdown">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sr-body">
+              <div class="message">
+                <div class="message-title">
+                  <img src="./images/c-sm.jpg" alt="">
+                  <div class="mt-name">
+                    <span>نینو کولیوند</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>سلام تیم عزیز،</h3>
+                  <p>من با مشکل روبرو هستم چون نمی تونم واحد پول رو در صفحه سفارش خرید انتخاب کنم. بچه ها می تونید به من
+                    بگید که من چه کار اشتباهی انجام میدم؟ لطفا فایل های پیوست رو بررسی کنید.</p>
+                  <p>باتشکر</p>
+                  <p>کولیوند</p>
+                </div>
+              </div>
+              <div class="message">
+                <div class="message-title">
+                  <div class="profile">م ت</div>
+                  <div class="mt-name">
+                    <span>تیم پشتیبانی (شما)</span>
+                    <span class="mt-date">21 آبان</span>
+                  </div>
+                </div>
+                <div class="message-body">
+                  <h3>سلام سرکار خانم کولیوند</h3>
+                  <p>از شنیدن این موضوع واقعا متاسفیم، شما با یک تجربه غیرمنتظره مواجه شدید. تیم ما فورا این موضوع را
+                    بررسی می کنند و در اسرع وقت با شما تماس می گیرند.</p>
+                  <p>بسیار از شما متشکریم</p>
+                </div>
+                <div class="message-footer">
+                  <p>پاسخ داده شده توسط مهرداد موسوی در 11:32 صبح</p>
+                </div>
+              </div>
+            </div>
+        </section> -->
+        <!-- <section class="setting">
+          <p class="title">تنظیمات</p>
+          <div class="setting-body">
+            <h4>تنظیمات فروشگاه اینترنتی</h4>
+            <p>در اینجا تنظیمات پایه فروشگاه برای وب سایت شما آمده است.</p>
+            <form action="">
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">نام فروشگاه</label>
+                  <p class="form-note">نام وب سایت خود را مشخص کنید</p>
+                </div>
+                <div class="group-left">
+                  <input class="form-text" type="text" value="فروشگاه من">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">ایمیل وب سایت</label>
+                  <p class="form-note">نشانی ایمیل وب سایت خود را مشخص کنید.</p>
+                </div>
+                <div class="group-left">
+                  <input class="form-text" type="email" value="your@email.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">کپی رایت وب سایت</label>
+                  <p class="form-note">اطلاعات کپی رایت وب سایت شما.</p>
+                </div>
+                <div class="group-left">
+                  <input class="form-text" type="text" value="تمام حقوق محفوظ است.">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">مجوز ثبت نام</label>
+                  <p class="form-note">فعال یا غیرفعال کردن ثبت نام در وب سایت</p>
+                </div>
+                <div class="group-left">
+                  <input class="form-radio" type="radio">
+                  <label for="">فعال</label>
+                  <input class="form-radio" type="radio">
+                  <label for="">غیرفعال</label>
+                  <input class="form-radio" type="radio">
+                  <label for="">در صورت درخواست</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">وب سایت اصلی</label>
+                  <p class="form-note">اگر وب سایت اصلی شما خارجی است، نشانی اینترنتی را مشخص کنید.</p>
+                </div>
+                <div class="group-left">
+                  <input class="form-text" type="url" value="https://www.yourwebsite.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="group-right">
+                  <label for="" class="form-label">حالت تعمیر</label>
+                  <p class="form-note">برای آفلاین کردن وب سایت فعال کنید.</p>
+                </div>
+                <div class="group-left">
+                  <label for="">آفلاین</label>
+                  <input type="checkbox">
+                </div>
+              </div>
+              <div class="form-submit">
+                <button class="submit" type="submit">به روز رسانی</button>
+              </div>
+            </form>
+          </div>
+        </section> -->
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
